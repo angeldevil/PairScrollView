@@ -14,6 +14,8 @@ PairScrollView
 Examples
 ========
 
+如下图，上面是一个`WebView`，下面是一个`LinearLayout`，`LinearLayout`中竖直排列一个`LinearLayout`和一个`ListView`，通过`layout_weight`使滚动到ListView时上面的Toolbar一直显示在屏幕顶部。
+
 ![][2]
 ![][3]
 
