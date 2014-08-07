@@ -1,7 +1,7 @@
 PairScrollView
 ==============
 
-类似今日头条详情页，可以有两个Child View，并且这两个Child View都可以垂直滚动，比如`WebView+ListView`。
+类似今日头条详情页，可以有两个Child View，并且这两个Child View都可以垂直滚动，比如 `WebView+ListView`。
 
 但是也不要求必须是`WebView`、`ListView`或`ScrollView`，可以是任意View。
 
@@ -24,7 +24,7 @@ Licence
 
 
 
- [1]:https://github.com/angeldevil/PairScrollView/blob/master/src/me/angeldevil/pairscrollview/CustomLinearLayout.java
- [2]:https://github.com/angeldevil/PairScrollView/art/img1.png
- [3]:https://github.com/angeldevil/PairScrollView/art/img2.png
+ [1]:./src/me/angeldevil/pairscrollview/CustomLinearLayout.java
+ [2]:./art/img1.png
+ [3]:./art/img2.png
  [4]:http://www.apache.org/licenses/LICENSE-2.0.html
