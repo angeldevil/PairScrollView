@@ -47,4 +47,9 @@ public class CustomLinearLayout extends LinearLayout {
         }
         return CHILD_NOT_PROCEED;
     }
+
+    @Override
+    public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+//        super.requestDisallowInterceptTouchEvent(disallowIntercept);
+    }
 }
