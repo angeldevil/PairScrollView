@@ -9,11 +9,13 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.Scroller;
 
 public class PairScrollView extends ViewGroup {
+
+    public interface OnScrollListener {
+        void onScrollChanged(int l, int t, int oldl, int oldt);
+    }
 
     private static final int DIRECT_BOTTOM = 1;
     private static final int DIRECT_TOP = -1;
@@ -27,6 +29,8 @@ public class PairScrollView extends ViewGroup {
 
     private Scroller mScroller;
     private VelocityTracker mVelocityTracker;
+
+    private OnScrollListener mOnScrollListener;
 
     public PairScrollView(Context context) {
         super(context);
@@ -67,6 +71,10 @@ public class PairScrollView extends ViewGroup {
         }
     }
 
+    public void setOnScrollListener(OnScrollListener listener) {
+        mOnScrollListener = listener;
+    }
+
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         final int count = getChildCount();
@@ -99,6 +107,14 @@ public class PairScrollView extends ViewGroup {
             measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        if (mOnScrollListener != null) {
+            mOnScrollListener.onScrollChanged(l, t, oldl, oldt);
+        }
+        super.onScrollChanged(l, t, oldl, oldt);
     }
 
     @Override
